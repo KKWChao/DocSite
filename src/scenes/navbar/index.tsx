@@ -4,7 +4,6 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import Logo from "@/assets/logoFull.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "./Link";
-import ActionButton from "@/shared/ActionButton";
 
 type Props = {
   isTopOfPage: boolean;
@@ -17,21 +16,22 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexEnd = "flex items-center justify-end";
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navbarBackground = isTopOfPage ? "" : "bg-white drop-shadow-md";
 
   return (
     <nav>
       <div
-        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
+        id="navbar"
+        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full`}
       >
-        <div className={`${flexBetween} mx-auto w-5/6`}>
+        <div className={`${flexBetween} mx-auto w-full`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT */}
             <img src={Logo} alt="" className="h-20" />
             {/* RIGHT */}
             {isAboveMediumScreens ? (
-              <div className={`${flexEnd} w-full`}>
-                <div className={`${flexBetween} gap-8 text-sm`}>
+              <div className={`${flexEnd} w-full pr-5`}>
+                <div className={`${flexBetween} gap-8 text-lg`}>
                   <Link
                     page="Home"
                     selectedPage={selectedPage}
