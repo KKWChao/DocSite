@@ -12,7 +12,7 @@ const Doctor = ({ doctorName, doctorImage, doctorDescription }: Props) => {
     <div className="flex flex-col justify-center bg-secondary-400 p-5 md:flex-row md:gap-32 md:p-20">
       <div className="md:h-auto md:w-[480px]">
         <img
-          className="h-[480px] bg-black md:w-full "
+          className="h-[240px] w-auto bg-black md:h-[480px] md:w-full"
           src={doctorImage}
           alt={doctorName}
         />

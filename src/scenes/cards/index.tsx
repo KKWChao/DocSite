@@ -33,17 +33,15 @@ const cards = (props: Props) => {
   return (
     <div className="z-0 mt-5 flex w-full pt-20">
       {isAboveMediumScreens && (
-        <div>
-          <div className="mx-auto flex justify-center gap-20">
-            {info.map((info: InfoType, i) => (
-              <Info
-                key={`${info.cardTitle}_${i}`}
-                cardTitle={info.cardTitle}
-                cardText={info.cardText}
-                cardDelay={info.cardDelay}
-              />
-            ))}
-          </div>
+        <div className="mx-auto flex justify-center gap-20">
+          {info.map((info: InfoType, i) => (
+            <Info
+              key={`${info.cardTitle}_${i}`}
+              cardTitle={info.cardTitle}
+              cardText={info.cardText}
+              cardDelay={info.cardDelay}
+            />
+          ))}
         </div>
       )}
     </div>

@@ -5,6 +5,7 @@ import Card from "@/scenes/cards";
 import Navbar from "@/scenes/navbar";
 import Footer from "@/scenes/footer";
 import Doctors from "@/scenes/doctors";
+import Location from "./scenes/location";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -37,6 +38,7 @@ function App() {
       <Home setSelectedPage={setSelectedPage} />
       <Card setSelectedPage={setSelectedPage} />
       <Doctors setSelectedPage={setSelectedPage} />
+      <Location setSelectedPage={setSelectedPage} />
       <Footer />
     </div>
   );

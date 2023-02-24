@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import Logo from "@/assets/logoFull.png";
+import Logo from "@/assets/logoSM.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "./Link";
 
@@ -27,7 +27,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
         <div className={`${flexBetween} mx-auto w-full`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT */}
-            <img src={Logo} alt="" className="h-20" />
+            <img src={Logo} alt="" className="z-20 h-20" />
             {/* RIGHT */}
             {isAboveMediumScreens ? (
               <div className={`${flexEnd} w-full pr-5`}>
@@ -43,15 +43,15 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Our Offices"
+                    page="Offices"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
-                  <Link
+                  {/* <Link
                     page="Contact Us"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
-                  />
+                  /> */}
                 </div>
               </div>
             ) : (
@@ -88,15 +88,15 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Our Offices"
+              page="Offices"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            {/* <Link
               page="Contact Us"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
-            />
+            /> */}
           </div>
         </div>
       )}
