@@ -1,7 +1,6 @@
 import { SelectedPage, DocType } from "@/shared/types";
 import { motion } from "framer-motion";
 import Doctor from "./Doctor";
-import Logo from "@/assets/logoSM.png";
 
 const docs: Array<DocType> = [
   {
@@ -30,29 +29,30 @@ type Props = {
 
 const Doctors = ({ setSelectedPage }: Props) => {
   return (
-    <section
-      id="doctors"
-      className="z-10 mt-10 w-full bg-secondary-400 md:bg-white"
-    >
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Doctors)}>
+    <section id="doctors" className="w-full bg-secondary-400">
+      <motion.div
+        className="flex flex-col items-center justify-center"
+        onViewportEnter={() => setSelectedPage(SelectedPage.Doctors)}
+      >
         {/* DOCTOR HEADER */}
-        <div className="flex justify-center bg-primary-100 p-20 text-5xl text-secondary-400">
+        <div className=" w-full bg-primary-100 p-20 text-center text-5xl text-secondary-400">
           <h1>
             MEET THE <span>DOCTORS</span>
           </h1>
         </div>
+        <div className="container">
+          {docs.map((docs: DocType, i) => (
+            <Doctor
+              key={`${docs.doctorName}_${i}`}
+              doctorName={docs.doctorName}
+              doctorDescription={docs.doctorDescription}
+              doctorImage={docs.doctorImage}
+            />
+          ))}
+        </div>
       </motion.div>
+
       {/* DESCRIPTION CARDS */}
-      <div className="">
-        {docs.map((docs: DocType, i) => (
-          <Doctor
-            key={`${docs.doctorName}_${i}`}
-            doctorName={docs.doctorName}
-            doctorDescription={docs.doctorDescription}
-            doctorImage={docs.doctorImage}
-          />
-        ))}
-      </div>
     </section>
   );
 };

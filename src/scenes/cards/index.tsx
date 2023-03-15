@@ -31,7 +31,7 @@ const cards = (props: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width:1000px)");
 
   return (
-    <div className="z-0 mt-5 flex w-full pt-20">
+    <div className="mt-5 flex w-full pt-20">
       {isAboveMediumScreens && (
         <div className="mx-auto flex justify-center gap-20">
           {info.map((info: InfoType, i) => (

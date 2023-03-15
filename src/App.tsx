@@ -36,7 +36,6 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Home setSelectedPage={setSelectedPage} />
-      <Card setSelectedPage={setSelectedPage} />
       <Doctors setSelectedPage={setSelectedPage} />
       <Location setSelectedPage={setSelectedPage} />
       <Footer />
